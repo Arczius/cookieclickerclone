@@ -1,0 +1,15 @@
+body{
+	background-color: gray;
+}
+.button{
+	background-color: lime;
+	color: white;
+	padding: 15px;
+	border: none;
+	transition-duration: 0.4s;
+}
+.button:hover{
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}
