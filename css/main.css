@@ -1,5 +1,6 @@
 body{
 	background-color: gray;
+	font-family: 'Roboto', sans-serif;
 }
 .button{
 	background-color: lime;
@@ -7,6 +8,8 @@ body{
 	padding: 15px;
 	border: none;
 	transition-duration: 0.4s;
+	border-radius: 5
+	px;	
 }
 .button:hover{
 	cursor: pointer;
