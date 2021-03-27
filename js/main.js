@@ -6,19 +6,32 @@ var workersAmount = document.getElementById('workersAmount');
 
 var money = 0;
 var autoWorkers = 0;
+var workerCost = 0;
 
-
-
+function workerAmountText(){
+	workersAmount.innerText = "you have " + autoWorkers + " workers";
+}
 
 function autoWorkerAdd(amount){
-	for(i=0; i != amount; i++){
-		autoWorkers++
+	if (workerCost > money) {
+		alert("the worker couldnt be bought");
+	}
+	else{
+		for(i=0; i != amount; i++){
+			autoWorkers++;
+		}
+		workerAmountText();
 	}
 }
 
 function removeMoney(amount){
-	for(i=0; i != amount; i++){
-		money--;
+	if (workerCost > money) {
+		alert("you do not have enough money");
+	}
+	else{
+		for(i=0; i != amount; i++){
+			money--;
+		}
 	}
 }
 
@@ -34,13 +47,19 @@ cookieBtn.onclick = function(){
 }
 //buy worker button
 buyWorker.onclick = function(){
+	workerCost = 10;
 	autoWorkerAdd(1);
-	removeMoney(10);
+	removeMoney(workerCost);
 	moneyWrite();
+}
+
+function start(){
+	moneyWrite();
+	workerAmountText();
+	console.log("the game has succesfully started");
 }
 
 
 
-
-//writes the initial money to the dom
-moneyWrite();
+//starts the game
+start();
