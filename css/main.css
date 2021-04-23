@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body{
+    display: inline-block;
     font-family: 'Open Sans', sans-serif;
     background-color: gray;
 }
@@ -23,7 +24,7 @@ button:hover{
 }
 .cookieClass:hover{
     background-color: rgb(85, 32, 32);
-    padding: 2.2rem;
+    padding: 2.09rem;
 }
 
 .buttonContainerClass > button{

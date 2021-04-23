@@ -1,7 +1,21 @@
+//contains the entire site, currently not used, but will be used soon
+var siteContainer = document.getElementById('siteContainer');
+
+var cookieBtn = document.createElement("button");
+siteContainer.appendChild(cookieBtn);
+cookieBtn.innerText = "cookie";
+cookieBtn.setAttribute("id", "cookieBtn");
+cookieBtn.setAttribute("class", "cookieClass")
+
+var workerArray = [
+	"worker",
+	"cookie hunter"
+]
+
 //variables in the dom
 var btnContainer = document.getElementById('btnContainer');
 var moneyText = document.getElementById('moneyText');
-var cookieBtn = document.getElementById('cookieBtn');
+//var cookieBtn = document.getElementById('cookieBtn');
 var buyWorker = document.getElementById('buyWorker');
 var workersAmount = document.getElementById('workersAmount');
 var buyHunter = document.getElementById('buyHunter');
