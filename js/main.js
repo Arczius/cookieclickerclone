@@ -1,4 +1,4 @@
-//contains the entire site, currently not used, but will be used soon
+//contains the entire site, currently contains only the cookie
 var siteContainer = document.getElementById('siteContainer');
 
 var cookieBtn = document.createElement("button");
@@ -76,7 +76,6 @@ buyWorker.onclick = function(){
 	removeMoney(workerCost);
 	moneyWrite();
 }
-
 //buy hunter button
 buyHunter.onclock = function(){
     workerCost = 17;
@@ -84,14 +83,24 @@ buyHunter.onclock = function(){
     removeMoney(workerCost);
     moneyWrite();
 }
+//worker money generator
+function timeoutMoney(){
+	if(autoWorkers > 0){
+		setInterval(moneyAddWorker(), 1000);
+	}
+}
+function moneyAddWorker(){
+	money++;
+	timeoutMoney();
+	moneyWrite();
+}
 
+//start function which includes every start script
 function start(){
 	moneyWrite();
 	workerAmountText();
 	console.log("the game has succesfully started");
 }
-
-
 
 //starts the game
 start();
