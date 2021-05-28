@@ -15,7 +15,6 @@ var workerArray = [
 //variables in the dom
 var btnContainer = document.getElementById('btnContainer');
 var moneyText = document.getElementById('moneyText');
-//var cookieBtn = document.getElementById('cookieBtn');
 var buyWorker = document.getElementById('buyWorker');
 var workersAmount = document.getElementById('workersAmount');
 var buyHunter = document.getElementById('buyHunter');
