@@ -24,7 +24,16 @@ var autoWorkers = 0;
 var workerCost = 0;
 
 function workerAmountText(){
-	workersAmount.innerText = "you have " + autoWorkers + " workers";
+	if(autoWorkers == 0){
+		workersAmount.innerText = "you have no workers yet, buy some";
+	}
+	else if(autoWorkers == 1){
+		workersAmount.innerText = "you have " + autoWorkers + " worker";
+	}
+	else{
+		workersAmount.innerText = "you have " + autoWorkers + " workers";
+	}
+	
 }
 
 function autoWorkerAdd(amount){
