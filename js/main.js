@@ -1,6 +1,7 @@
 //contains the entire site, currently contains only the cookie
 var siteContainer = document.getElementById('siteContainer');
 
+//makes the cookie button
 var cookieBtn = document.createElement("button");
 siteContainer.appendChild(cookieBtn);
 cookieBtn.innerText = "cookie";
@@ -23,80 +24,81 @@ var money = 0;
 var autoWorkers = 0;
 var workerCost = 0;
 
-function workerAmountText(){
-	if(autoWorkers == 0){
+function workerAmountText() {
+	if (autoWorkers == 0) {
 		workersAmount.innerText = "you have no workers yet, buy some";
 	}
-	else if(autoWorkers == 1){
+	else if (autoWorkers == 1) {
 		workersAmount.innerText = "you have " + autoWorkers + " worker";
 	}
-	else{
+	else {
 		workersAmount.innerText = "you have " + autoWorkers + " workers";
 	}
-	
+
 }
 
-function autoWorkerAdd(amount){
+function autoWorkerAdd(amount) {
 	if (workerCost > money) {
 		alert("the worker couldnt be bought");
 	}
-	else{
-		for(i=0; i != amount; i++){
+	else {
+		for (i = 0; i != amount; i++) {
 			autoWorkers++;
 		}
 		workerAmountText();
 	}
 }
 
-function removeMoney(amount){
+function removeMoney(amount) {
 	if (workerCost > money) {
 		alert("you do not have enough money");
 	}
-	else{
-		for(i=0; i != amount; i++){
+	else {
+		for (i = 0; i != amount; i++) {
 			money--;
 		}
 	}
 }
 
 //function to write the amount of money to the dom
-function moneyWrite(){
+function moneyWrite() {
 	moneyText.innerText = "$ " + money;
 }
 
 //the cookie button
-cookieBtn.onclick = function(){
+cookieBtn.onclick = function () {
 	money++;
 	moneyWrite();
 }
 //buy worker button
-buyWorker.onclick = function(){
+buyWorker.onclick = function () {
 	workerCost = 10;
 	autoWorkerAdd(1);
 	removeMoney(workerCost);
 	moneyWrite();
 }
 //buy hunter button
-buyHunter.onclock = function(){
-    workerCost = 17;
-    autoWorkerAdd(2);
-    removeMoney(workerCost);
-    moneyWrite();
+buyHunter.onclock = function () {
+	workerCost = 17;
+	autoWorkerAdd(2);
+	removeMoney(workerCost);
+	moneyWrite();
 }
+
 //worker money generator
-function timeoutMoney(){
-	if(autoWorkers > 0){
+function timeoutMoney() {
+	if (autoWorkers > 0) {
 		setInterval(moneyAddWorker(), 1000);
 	}
 }
-function moneyAddWorker(){
+function moneyAddWorker() {
 	money++;
 	timeoutMoney();
 	moneyWrite();
 }
 
 //start function which includes every start script
-function start(){
+function start() {
 	moneyWrite();
 	workerAmountText();
 	console.log("the game has succesfully started");
