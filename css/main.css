@@ -1,35 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-body{
+body {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     background-color: gray;
 }
 
-button{
+button {
     border: none;
     border-radius: 10%;
     transition-duration: 0.4s;
     padding: 0.2rem;
 }
-button:hover{
-    cursor:pointer;
+
+button:hover {
+    cursor: pointer;
 }
 
-.cookieClass{
+.cookieClass {
     background-color: brown;
     border-radius: 100%;
     color: white;
     padding: 2rem;
 }
-.cookieClass:hover{
+
+.cookieClass:hover {
     background-color: rgb(85, 32, 32);
     padding: 2.09rem;
 }
 
-.buttonContainerClass > button{
-    background-color:lawngreen;
+.buttonContainerClass>button {
+    background-color: lawngreen;
 }
-.buttonContainerClass > button:hover{
-    background-color:lime;
+
+.buttonContainerClass>button:hover {
+    background-color: lime;
 }
